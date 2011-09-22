@@ -1,9 +1,9 @@
 %define debug_package %{nil}
 
-Summary:	A plugin for nagios that will check crond
+Summary:	Nagios plugin - check_crond
 Name:		nagios-plugins-crond
 Version:	1.3
-Release:	3.vortex%{?dist}
+Release:	4.vortex%{?dist}
 Vendor:		Vortex RPM
 License:	GPLv3
 Group:		Applications/System
@@ -35,6 +35,9 @@ rm -rf %{buildroot}
 %{_libdir}/nagios/plugins/check_crond
 
 %changelog
+* Sun Sep 22 2011  Ilya A. Otyutskiy <sharp@thesharp.ru> - 1.3-4.vortex
+- Change summary.
+
 * Sun Sep 18 2011  Ilya A. Otyutskiy <sharp@thesharp.ru> - 1.3-3.vortex
 - Remove dot from summary.
 
