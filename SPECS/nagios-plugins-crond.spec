@@ -1,14 +1,16 @@
 %define debug_package %{nil}
 
+%define commit a649f2a
+
 Summary:	Nagios plugin - check_crond
 Name:		nagios-plugins-crond
-Version:	1.3
-Release:	4.vortex%{?dist}
+Version:	1.4
+Release:	1.vortex%{?dist}
 Vendor:		Vortex RPM
 License:	GPLv3
 Group:		Applications/System
-URL:		http://thesharp.ru/nagios-plugins/
-Source0:	http://thesharp.ru/nagios-plugins/crond/nagios-plugins-crond-%{version}.tar.gz
+URL:		https://github.com/thesharp/nagios-plugins
+Source0:	thesharp-nagios-plugins-%{commit}.tar.gz
 Requires:	nagios-plugins
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -16,7 +18,7 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 A plugin for nagios that will check crond.
 
 %prep
-%setup -q -n nagios-plugins-crond-%{version}
+%setup -q -n thesharp-nagios-plugins-%{commit}
 # lib64 fix
 perl -pi -e "s|/usr/lib|%{_libdir}|g" check_crond
 
@@ -31,10 +33,13 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%doc LICENSE ChangeLog
+%doc LICENSE
 %{_libdir}/nagios/plugins/check_crond
 
 %changelog
+* Wed Jul 11 2012  Ilya A. Otyutskiy <sharp@thesharp.ru> - 1.4-1.vortex
+- New upstream release.
+
 * Sun Sep 22 2011  Ilya A. Otyutskiy <sharp@thesharp.ru> - 1.3-4.vortex
 - Change summary.
 
