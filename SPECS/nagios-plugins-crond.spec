@@ -1,10 +1,10 @@
 %define debug_package %{nil}
 
-%define commit a649f2a
+%define commit ac1ff4b
 
 Summary:	Nagios plugin - check_crond
 Name:		nagios-plugins-crond
-Version:	1.4
+Version:	1.5
 Release:	1.vortex%{?dist}
 Vendor:		Vortex RPM
 License:	GPLv3
@@ -37,6 +37,9 @@ rm -rf %{buildroot}
 %{_libdir}/nagios/plugins/check_crond
 
 %changelog
+* Wed Jul 11 2012  Ilya A. Otyutskiy <sharp@thesharp.ru> - 1.5-1.vortex
+- New upstream release.
+
 * Wed Jul 11 2012  Ilya A. Otyutskiy <sharp@thesharp.ru> - 1.4-1.vortex
 - New upstream release.
 
